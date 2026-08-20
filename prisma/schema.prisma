@@ -1,0 +1,188 @@
+generator client {
+  provider            = "prisma-client"
+  output              = "../src/generated/prisma"
+  importFileExtension = ""
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum ApplicationStatus {
+  APPLIED
+  SCREENING
+  INTERVIEWING
+  OFFER
+  REJECTED
+  WITHDRAWN
+}
+
+enum LocationType {
+  REMOTE
+  HYBRID
+  ONSITE
+}
+
+enum StageType {
+  HR_SCREEN
+  TECHNICAL_TEST
+  TECH_INTERVIEW
+  CULTURE_FIT
+  MANAGEMENT
+  OFFER_REVIEW
+  OTHER
+}
+
+enum SalaryPeriod {
+  HOURLY
+  MONTHLY
+  YEARLY
+}
+
+enum ApplicationEventType {
+  CREATED
+  STATUS_CHANGED
+  STAGE_ADDED
+  STAGE_COMPLETED
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime? @map("email_verified")
+  image         String?
+  locale        String    @default("es") @db.VarChar(5)
+  createdAt     DateTime  @default(now()) @map("created_at")
+  updatedAt     DateTime  @updatedAt @map("updated_at")
+
+  accounts     Account[]
+  sessions     Session[]
+  applications Application[]
+  platforms    Platform[]
+
+  @@map("users")
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String  @map("user_id")
+  type              String
+  provider          String
+  providerAccountId String  @map("provider_account_id")
+  refresh_token     String? @map("refresh_token") @db.Text
+  access_token      String? @map("access_token") @db.Text
+  expires_at        Int?    @map("expires_at")
+  token_type        String? @map("token_type")
+  scope             String?
+  id_token          String? @map("id_token") @db.Text
+  session_state     String? @map("session_state")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@index([userId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique @map("session_token")
+  userId       String   @map("user_id")
+  expires      DateTime
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+model Platform {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String
+  baseUrl   String?  @map("base_url")
+  isDefault Boolean  @default(false) @map("is_default")
+  userId    String?  @map("user_id")
+  createdAt DateTime @default(now()) @map("created_at")
+
+  user         User?         @relation(fields: [userId], references: [id], onDelete: Cascade)
+  applications Application[]
+
+  @@unique([userId, slug])
+  @@index([userId])
+  @@map("platforms")
+}
+
+model Application {
+  id              String            @id @default(cuid())
+  userId          String            @map("user_id")
+  platformId      String?           @map("platform_id")
+  companyName     String            @map("company_name") @db.VarChar(120)
+  jobTitle        String            @map("job_title") @db.VarChar(160)
+  jobUrl          String?           @map("job_url") @db.VarChar(2048)
+  jobUrlKey       String?           @map("job_url_key") @db.VarChar(512)
+  salaryMin       Int?              @map("salary_min")
+  salaryMax       Int?              @map("salary_max")
+  salaryCurrency  String?           @map("salary_currency") @db.VarChar(3)
+  salaryPeriod    SalaryPeriod?     @map("salary_period")
+  locationType    LocationType      @map("location_type")
+  locationCity    String?           @map("location_city") @db.VarChar(120)
+  locationCountry String?           @map("location_country") @db.VarChar(2)
+  status          ApplicationStatus @default(APPLIED)
+  appliedAt       DateTime          @map("applied_at") @db.Date
+  notes           String?           @db.VarChar(5000)
+  createdAt       DateTime          @default(now()) @map("created_at")
+  updatedAt       DateTime          @updatedAt @map("updated_at")
+
+  user     User               @relation(fields: [userId], references: [id], onDelete: Cascade)
+  platform Platform?          @relation(fields: [platformId], references: [id], onDelete: SetNull)
+  stages   InterviewStage[]
+  events   ApplicationEvent[]
+
+  @@index([userId, status, appliedAt(sort: Desc)])
+  @@index([userId, appliedAt(sort: Desc)])
+  @@index([userId, platformId])
+  @@index([userId, jobUrlKey])
+  @@map("applications")
+}
+
+model InterviewStage {
+  id            String    @id @default(cuid())
+  applicationId String    @map("application_id")
+  type          StageType
+  title         String?   @db.VarChar(120)
+  position      Int       @default(0)
+  scheduledAt   DateTime? @map("scheduled_at")
+  completedAt   DateTime? @map("completed_at")
+  feedback      String?   @db.VarChar(3000)
+  createdAt     DateTime  @default(now()) @map("created_at")
+
+  application Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId, position])
+  @@map("interview_stages")
+}
+
+model ApplicationEvent {
+  id            String               @id @default(cuid())
+  applicationId String               @map("application_id")
+  type          ApplicationEventType
+  fromStatus    ApplicationStatus?   @map("from_status")
+  toStatus      ApplicationStatus?   @map("to_status")
+  createdAt     DateTime             @default(now()) @map("created_at")
+
+  application Application @relation(fields: [applicationId], references: [id], onDelete: Cascade)
+
+  @@index([applicationId, createdAt])
+  @@map("application_events")
+}

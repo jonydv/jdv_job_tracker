@@ -1,0 +1,420 @@
+{
+  "LocaleLayout": {
+    "title": "Job Tracker — Organize your job search",
+    "description": "Centralize, filter and analyze your job applications in one place."
+  },
+  "common": {
+    "appName": "Job Tracker",
+    "loading": "Loading…",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "create": "Create",
+    "confirm": "Confirm",
+    "close": "Close",
+    "search": "Search",
+    "clearFilters": "Clear filters",
+    "back": "Back"
+  },
+  "nav": {
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "login": "Sign in",
+    "logout": "Sign out",
+    "language": "Language"
+  },
+  "errors": {
+    "unauthorized": "You need to sign in to do that.",
+    "validation": "Check the form for errors.",
+    "unexpected": "Something went wrong. Please try again.",
+    "notFound": "We couldn't find that record."
+  },
+  "dashboard": {
+    "title": "Dashboard",
+    "newApplication": "New application",
+    "exportCsv": "Export CSV",
+    "searchPlaceholder": "Search by company or role…",
+    "filters": {
+      "status": "Status",
+      "platform": "Platform",
+      "location": "Work mode",
+      "from": "From",
+      "to": "To",
+      "allStatuses": "All statuses",
+      "allPlatforms": "All platforms",
+      "allLocations": "All work modes"
+    },
+    "table": {
+      "company": "Company",
+      "role": "Role",
+      "platform": "Platform",
+      "location": "Work mode",
+      "status": "Status",
+      "appliedAt": "Applied",
+      "stages": "Stages",
+      "actions": "Actions"
+    },
+    "empty": {
+      "title": "You haven't logged any applications yet",
+      "description": "Start by adding the first job application you made.",
+      "cta": "Log my first application"
+    },
+    "emptyFiltered": {
+      "title": "No applications match these filters",
+      "description": "Try adjusting or clearing the applied filters."
+    },
+    "error": {
+      "title": "We couldn't load your applications",
+      "description": "There was an error connecting to the server.",
+      "retry": "Retry"
+    },
+    "duplicateWarning": "You already have a similar application to \"{company} — {role}\" logged.",
+    "metrics": {
+      "active": "Active",
+      "responseRate": "Response rate",
+      "avgDaysToFirstResponse": "Days to 1st response",
+      "interviewing": "Interviewing"
+    }
+  },
+  "application": {
+    "createTitle": "New application",
+    "editTitle": "Edit application",
+    "fields": {
+      "companyName": "Company",
+      "companyNamePlaceholder": "Company name",
+      "jobTitle": "Role",
+      "jobTitlePlaceholder": "e.g. Frontend Engineer",
+      "jobUrl": "Job posting link",
+      "jobUrlPlaceholder": "https://…",
+      "platform": "Platform",
+      "platformPlaceholder": "Choose a platform",
+      "platformCreate": "Create platform…",
+      "salaryMin": "Minimum salary",
+      "salaryMax": "Maximum salary",
+      "salaryCurrency": "Currency",
+      "salaryPeriod": "Period",
+      "locationType": "Work mode",
+      "locationCity": "City",
+      "locationCityPlaceholder": "e.g. Austin",
+      "locationCountry": "Country",
+      "locationCountryPlaceholder": "Search for a country…",
+      "locationCountryClear": "No country",
+      "locationCountryMapCaption": "Map highlighting {country}",
+      "status": "Status",
+      "appliedAt": "Applied on",
+      "notes": "Notes"
+    },
+    "actions": {
+      "edit": "Edit",
+      "delete": "Delete",
+      "changeStatus": "Change status"
+    },
+    "deleteConfirm": {
+      "title": "Delete this application?",
+      "description": "This will delete \"{company} — {role}\" along with its interview stages. This action can't be undone.",
+      "confirm": "Delete application"
+    },
+    "toasts": {
+      "created": "Application created",
+      "updated": "Application updated",
+      "deleted": "Application deleted",
+      "statusUpdated": "Status updated"
+    }
+  },
+  "stage": {
+    "title": "Interview stages",
+    "add": "Add stage",
+    "empty": "You haven't logged any stages yet.",
+    "fields": {
+      "type": "Type",
+      "title": "Title",
+      "titlePlaceholder": "e.g. Second technical interview",
+      "scheduledAt": "Scheduled date",
+      "feedback": "Feedback"
+    },
+    "markCompleted": "Mark as completed",
+    "markPending": "Mark as pending",
+    "delete": "Delete stage",
+    "toasts": {
+      "added": "Stage added",
+      "updated": "Stage updated",
+      "deleted": "Stage deleted",
+      "statusUpdated": "Stage updated"
+    }
+  },
+  "platform": {
+    "createTitle": "Create platform",
+    "namePlaceholder": "Platform name",
+    "baseUrlPlaceholder": "https:// (optional)",
+    "create": "Create platform"
+  },
+  "settings": {
+    "title": "Settings",
+    "profile": {
+      "title": "Profile",
+      "nameLabel": "Name",
+      "save": "Save"
+    },
+    "language": {
+      "title": "Language",
+      "description": "Used for the interface. It doesn't translate the data you entered."
+    },
+    "export": {
+      "title": "Export your data",
+      "description": "Download all your applications and stages.",
+      "json": "Download JSON",
+      "csv": "Download CSV"
+    },
+    "dangerZone": {
+      "title": "Delete account",
+      "description": "This permanently and immediately deletes your account and all your data. It can't be undone.",
+      "emailLabel": "Type your email to confirm",
+      "confirm": "Delete my account and all my data"
+    },
+    "toasts": {
+      "profileUpdated": "Profile updated"
+    }
+  },
+  "validation": {
+    "application": {
+      "companyRequired": "Enter the company name.",
+      "companyTooLong": "The company name is too long.",
+      "jobTitleRequired": "Enter the role.",
+      "jobTitleTooLong": "The role is too long.",
+      "jobUrlInvalid": "Enter a valid URL (http or https).",
+      "salaryInvalid": "Enter a valid number.",
+      "salaryMaxLowerThanMin": "Maximum salary can't be lower than the minimum.",
+      "salaryCurrencyRequired": "Choose a currency if you entered a salary.",
+      "locationCityRequired": "Enter the city for this work mode.",
+      "appliedAtInvalid": "Enter a valid date.",
+      "appliedAtFuture": "The application date can't be in the future.",
+      "appliedAtTooOld": "The application date is too far in the past."
+    },
+    "platform": {
+      "nameTooShort": "Name must be at least 2 characters.",
+      "nameTooLong": "Name is too long.",
+      "baseUrlInvalid": "Enter a valid URL (http or https)."
+    },
+    "stage": {
+      "titleRequired": "Enter a title for this stage."
+    },
+    "account": {
+      "nameRequired": "Enter your name.",
+      "emailRequired": "Type your email to confirm.",
+      "emailMismatch": "The email doesn't match your account."
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Stop losing track of your job applications",
+      "subtitle": "Centralize every application, its interview stages and its status in one dashboard. No spreadsheets, no guessing where you applied.",
+      "ctaGoogle": "Get started free with Google",
+      "ctaSecondary": "See how it works",
+      "disclaimer": "No credit card required. You can delete your account and data anytime."
+    },
+    "preview": {
+      "label": "This is what your dashboard looks like",
+      "columnCompany": "Company",
+      "columnRole": "Role",
+      "columnPlatform": "Platform",
+      "columnStatus": "Status",
+      "rows": [
+        {
+          "company": "Nimbus Cloud",
+          "role": "Frontend Engineer",
+          "platform": "LinkedIn",
+          "status": "Interviewing"
+        },
+        {
+          "company": "Vertex Labs",
+          "role": "Full Stack Developer",
+          "platform": "GetOnBoard",
+          "status": "Screening"
+        },
+        {
+          "company": "Northline",
+          "role": "Product Engineer",
+          "platform": "We Work Remotely",
+          "status": "Offer"
+        }
+      ]
+    },
+    "features": {
+      "title": "Everything you need to organize your search",
+      "subtitle": "Built for anyone applying to many openings at once who needs to know, at a glance, where each one stands.",
+      "items": [
+        {
+          "title": "One dashboard, every application",
+          "description": "Filter by status, platform, work mode and date range. Search by company or role in real time."
+        },
+        {
+          "title": "Interview stages in detail",
+          "description": "Track every step — HR screen, technical, final interview — with dates and feedback."
+        },
+        {
+          "title": "Real metrics on your search",
+          "description": "Response rate, average time to first response and active interviews."
+        },
+        {
+          "title": "Your data is yours",
+          "description": "Export everything as JSON or CSV whenever you want, and delete your account in one click."
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Built by someone job hunting too",
+      "subtitle": "Job Tracker was born out of the need to organize dozens of applications spread across LinkedIn, GetOnBoard and more."
+    },
+    "finalCta": {
+      "title": "Organize your job search today",
+      "subtitle": "One click with Google and you can log your first application.",
+      "cta": "Get started free"
+    },
+    "footer": {
+      "rights": "All rights reserved.",
+      "privacy": "Privacy",
+      "terms": "Terms",
+      "madeBy": "Made by"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Sign in",
+      "subtitle": "Access your applications dashboard.",
+      "continueWithGoogle": "Continue with Google",
+      "googleUnavailable": "Google sign-in isn't configured in this environment yet.",
+      "devSectionTitle": "Development access",
+      "devSectionSubtitle": "Only available outside production, to try the app without Google credentials.",
+      "devEmailLabel": "Email",
+      "devEmailPlaceholder": "you@example.com",
+      "devSubmit": "Sign in",
+      "error": "We couldn't sign you in. Please try again.",
+      "alreadySignedIn": "You're already signed in."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Privacy policy",
+      "updatedAt": "Last updated: August 2026",
+      "sections": [
+        {
+          "heading": "What data we collect",
+          "body": "When you sign in with Google, we receive your name, email address and profile picture. We also store the data you explicitly enter: companies, roles, links, notes and interview stages for your applications."
+        },
+        {
+          "heading": "What we use it for",
+          "body": "We use this data exclusively to operate the service: showing your dashboard, computing your metrics and keeping your session active. We don't use it for advertising or sell it to third parties."
+        },
+        {
+          "heading": "Who we share it with",
+          "body": "We use Google for authentication, and infrastructure providers (database and hosting) to run the application. These providers process data on our behalf and don't use it for their own purposes."
+        },
+        {
+          "heading": "Cookies",
+          "body": "We only use technical cookies: one to keep you signed in, and one to remember your preferred language. We don't use advertising or third-party tracking cookies."
+        },
+        {
+          "heading": "Your rights",
+          "body": "You can export all your data at any time from Settings, as JSON or CSV. You can permanently and immediately delete your account and all associated data, also from Settings."
+        },
+        {
+          "heading": "Data retention",
+          "body": "We keep your data while your account is active. When you delete your account, all your data is permanently removed from our production databases."
+        },
+        {
+          "heading": "Children",
+          "body": "This service is not directed at children under 16, and we don't knowingly collect data from children."
+        },
+        {
+          "heading": "Changes to this policy",
+          "body": "If we make material changes to this policy, we'll note it on this same page along with the last updated date."
+        },
+        {
+          "heading": "Contact",
+          "body": "For questions about your data or this policy, write to us at {contactEmail}."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of service",
+      "updatedAt": "Last updated: August 2026",
+      "sections": [
+        {
+          "heading": "Acceptance of terms",
+          "body": "By creating an account and using Job Tracker, you accept these terms. If you don't agree, please don't use the service."
+        },
+        {
+          "heading": "Description of the service",
+          "body": "Job Tracker is a personal tool to log and organize your job applications. It's an early-stage product (MVP) and may change without prior notice."
+        },
+        {
+          "heading": "Your account",
+          "body": "You're responsible for keeping access to your Google account secure. We don't share your account with third parties or use it for purposes other than what you authorize."
+        },
+        {
+          "heading": "Acceptable use",
+          "body": "You may not use the service for illegal activities, attempt to access other users' data, or engage in scraping or automated abuse of the application."
+        },
+        {
+          "heading": "Your content",
+          "body": "The data you enter (applications, notes, stages) is yours. We claim no ownership over that content; we only store it to provide the service to you."
+        },
+        {
+          "heading": "Service availability",
+          "body": "Being an MVP, the service is provided \"as is\", without guarantees of continuous availability. We make a reasonable effort to keep it running, but we don't offer a guaranteed service level."
+        },
+        {
+          "heading": "Limitation of liability",
+          "body": "To the extent permitted by law, we are not liable for indirect losses arising from use of the service, including data loss due to causes outside our reasonable control."
+        },
+        {
+          "heading": "Account closure",
+          "body": "You can delete your account anytime from Settings. We may suspend accounts that violate these terms or that pose a risk to the service."
+        },
+        {
+          "heading": "Changes to these terms",
+          "body": "We may update these terms as the product evolves. Material changes will be noted on this page."
+        },
+        {
+          "heading": "Contact",
+          "body": "For any questions about these terms, write to us at {contactEmail}."
+        }
+      ]
+    }
+  },
+  "enums": {
+    "status": {
+      "APPLIED": "Applied",
+      "SCREENING": "Screening",
+      "INTERVIEWING": "Interviewing",
+      "OFFER": "Offer",
+      "REJECTED": "Rejected",
+      "WITHDRAWN": "Withdrawn"
+    },
+    "locationType": {
+      "REMOTE": "Remote",
+      "HYBRID": "Hybrid",
+      "ONSITE": "On-site"
+    },
+    "stageType": {
+      "HR_SCREEN": "HR screen",
+      "TECHNICAL_TEST": "Technical test",
+      "TECH_INTERVIEW": "Technical interview",
+      "CULTURE_FIT": "Culture fit",
+      "MANAGEMENT": "Management interview",
+      "OFFER_REVIEW": "Offer review",
+      "OTHER": "Other"
+    },
+    "salaryPeriod": {
+      "HOURLY": "Hourly",
+      "MONTHLY": "Monthly",
+      "YEARLY": "Yearly"
+    },
+    "platforms": {
+      "company-site": "Company site",
+      "referral": "Referral",
+      "other": "Other"
+    }
+  }
+}

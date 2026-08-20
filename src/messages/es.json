@@ -1,0 +1,420 @@
+{
+  "LocaleLayout": {
+    "title": "Job Tracker — Organizá tu búsqueda laboral",
+    "description": "Centralizá, filtrá y analizá tus postulaciones laborales en un solo lugar."
+  },
+  "common": {
+    "appName": "Job Tracker",
+    "loading": "Cargando…",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "create": "Crear",
+    "confirm": "Confirmar",
+    "close": "Cerrar",
+    "search": "Buscar",
+    "clearFilters": "Limpiar filtros",
+    "back": "Volver"
+  },
+  "nav": {
+    "dashboard": "Panel",
+    "settings": "Ajustes",
+    "login": "Iniciar sesión",
+    "logout": "Cerrar sesión",
+    "language": "Idioma"
+  },
+  "errors": {
+    "unauthorized": "Tenés que iniciar sesión para hacer esto.",
+    "validation": "Revisá los datos del formulario.",
+    "unexpected": "Algo salió mal. Probá de nuevo.",
+    "notFound": "No encontramos ese registro."
+  },
+  "dashboard": {
+    "title": "Panel",
+    "newApplication": "Nueva postulación",
+    "exportCsv": "Exportar CSV",
+    "searchPlaceholder": "Buscar por empresa o puesto…",
+    "filters": {
+      "status": "Estado",
+      "platform": "Plataforma",
+      "location": "Modalidad",
+      "from": "Desde",
+      "to": "Hasta",
+      "allStatuses": "Todos los estados",
+      "allPlatforms": "Todas las plataformas",
+      "allLocations": "Todas las modalidades"
+    },
+    "table": {
+      "company": "Empresa",
+      "role": "Puesto",
+      "platform": "Plataforma",
+      "location": "Modalidad",
+      "status": "Estado",
+      "appliedAt": "Postulado",
+      "stages": "Etapas",
+      "actions": "Acciones"
+    },
+    "empty": {
+      "title": "Todavía no cargaste ninguna postulación",
+      "description": "Empezá agregando la primera postulación laboral que hiciste.",
+      "cta": "Cargar mi primera postulación"
+    },
+    "emptyFiltered": {
+      "title": "Ninguna postulación coincide con estos filtros",
+      "description": "Probá ajustar o limpiar los filtros aplicados."
+    },
+    "error": {
+      "title": "No pudimos cargar tus postulaciones",
+      "description": "Ocurrió un error al conectar con el servidor.",
+      "retry": "Reintentar"
+    },
+    "duplicateWarning": "Ya tenés una postulación parecida a \"{company} — {role}\" cargada.",
+    "metrics": {
+      "active": "Activas",
+      "responseRate": "Tasa de respuesta",
+      "avgDaysToFirstResponse": "Días a 1ra respuesta",
+      "interviewing": "En entrevistas"
+    }
+  },
+  "application": {
+    "createTitle": "Nueva postulación",
+    "editTitle": "Editar postulación",
+    "fields": {
+      "companyName": "Empresa",
+      "companyNamePlaceholder": "Nombre de la empresa",
+      "jobTitle": "Puesto",
+      "jobTitlePlaceholder": "Ej: Frontend Engineer",
+      "jobUrl": "Enlace de la oferta",
+      "jobUrlPlaceholder": "https://…",
+      "platform": "Plataforma",
+      "platformPlaceholder": "Elegí una plataforma",
+      "platformCreate": "Crear plataforma…",
+      "salaryMin": "Salario mínimo",
+      "salaryMax": "Salario máximo",
+      "salaryCurrency": "Moneda",
+      "salaryPeriod": "Período",
+      "locationType": "Modalidad",
+      "locationCity": "Ciudad",
+      "locationCityPlaceholder": "Ej: Córdoba",
+      "locationCountry": "País",
+      "locationCountryPlaceholder": "Buscar un país…",
+      "locationCountryClear": "Sin país",
+      "locationCountryMapCaption": "Mapa que resalta {country}",
+      "status": "Estado",
+      "appliedAt": "Fecha de postulación",
+      "notes": "Notas"
+    },
+    "actions": {
+      "edit": "Editar",
+      "delete": "Eliminar",
+      "changeStatus": "Cambiar estado"
+    },
+    "deleteConfirm": {
+      "title": "¿Eliminar esta postulación?",
+      "description": "Se va a borrar \"{company} — {role}\" junto con sus etapas de entrevista. Esta acción no se puede deshacer.",
+      "confirm": "Eliminar postulación"
+    },
+    "toasts": {
+      "created": "Postulación creada",
+      "updated": "Postulación actualizada",
+      "deleted": "Postulación eliminada",
+      "statusUpdated": "Estado actualizado"
+    }
+  },
+  "stage": {
+    "title": "Etapas de entrevista",
+    "add": "Agregar etapa",
+    "empty": "Todavía no cargaste ninguna etapa.",
+    "fields": {
+      "type": "Tipo",
+      "title": "Título",
+      "titlePlaceholder": "Ej: Segunda entrevista técnica",
+      "scheduledAt": "Fecha programada",
+      "feedback": "Feedback"
+    },
+    "markCompleted": "Marcar como completada",
+    "markPending": "Marcar como pendiente",
+    "delete": "Eliminar etapa",
+    "toasts": {
+      "added": "Etapa agregada",
+      "updated": "Etapa actualizada",
+      "deleted": "Etapa eliminada",
+      "statusUpdated": "Etapa actualizada"
+    }
+  },
+  "platform": {
+    "createTitle": "Crear plataforma",
+    "namePlaceholder": "Nombre de la plataforma",
+    "baseUrlPlaceholder": "https:// (opcional)",
+    "create": "Crear plataforma"
+  },
+  "settings": {
+    "title": "Ajustes",
+    "profile": {
+      "title": "Perfil",
+      "nameLabel": "Nombre",
+      "save": "Guardar"
+    },
+    "language": {
+      "title": "Idioma",
+      "description": "Se usa para la interfaz. No traduce los datos que cargaste."
+    },
+    "export": {
+      "title": "Exportar tus datos",
+      "description": "Descargá todas tus postulaciones y etapas.",
+      "json": "Descargar JSON",
+      "csv": "Descargar CSV"
+    },
+    "dangerZone": {
+      "title": "Eliminar cuenta",
+      "description": "Esto borra tu cuenta y todos tus datos de forma permanente e inmediata. No se puede deshacer.",
+      "emailLabel": "Escribí tu email para confirmar",
+      "confirm": "Eliminar mi cuenta y todos mis datos"
+    },
+    "toasts": {
+      "profileUpdated": "Perfil actualizado"
+    }
+  },
+  "validation": {
+    "application": {
+      "companyRequired": "Ingresá el nombre de la empresa.",
+      "companyTooLong": "El nombre de la empresa es demasiado largo.",
+      "jobTitleRequired": "Ingresá el puesto.",
+      "jobTitleTooLong": "El puesto es demasiado largo.",
+      "jobUrlInvalid": "Ingresá una URL válida (http o https).",
+      "salaryInvalid": "Ingresá un número válido.",
+      "salaryMaxLowerThanMin": "El salario máximo no puede ser menor al mínimo.",
+      "salaryCurrencyRequired": "Elegí una moneda si cargaste un salario.",
+      "locationCityRequired": "Ingresá la ciudad para esta modalidad.",
+      "appliedAtInvalid": "Ingresá una fecha válida.",
+      "appliedAtFuture": "La fecha de postulación no puede ser futura.",
+      "appliedAtTooOld": "La fecha de postulación es demasiado antigua."
+    },
+    "platform": {
+      "nameTooShort": "El nombre debe tener al menos 2 caracteres.",
+      "nameTooLong": "El nombre es demasiado largo.",
+      "baseUrlInvalid": "Ingresá una URL válida (http o https)."
+    },
+    "stage": {
+      "titleRequired": "Ingresá un título para esta etapa."
+    },
+    "account": {
+      "nameRequired": "Ingresá tu nombre.",
+      "emailRequired": "Escribí tu email para confirmar.",
+      "emailMismatch": "El email no coincide con el de tu cuenta."
+    }
+  },
+  "landing": {
+    "hero": {
+      "title": "Dejá de perder el rastro de tus postulaciones",
+      "subtitle": "Centralizá cada postulación laboral, sus etapas de entrevista y su estado en un solo panel. Sin planillas, sin adivinar dónde aplicaste.",
+      "ctaGoogle": "Empezar gratis con Google",
+      "ctaSecondary": "Ver cómo funciona",
+      "disclaimer": "No pedimos tarjeta de crédito. Podés eliminar tu cuenta y tus datos cuando quieras."
+    },
+    "preview": {
+      "label": "Así se ve tu panel",
+      "columnCompany": "Empresa",
+      "columnRole": "Puesto",
+      "columnPlatform": "Plataforma",
+      "columnStatus": "Estado",
+      "rows": [
+        {
+          "company": "Nimbus Cloud",
+          "role": "Frontend Engineer",
+          "platform": "LinkedIn",
+          "status": "En entrevistas"
+        },
+        {
+          "company": "Vertex Labs",
+          "role": "Full Stack Developer",
+          "platform": "GetOnBoard",
+          "status": "Preselección"
+        },
+        {
+          "company": "Northline",
+          "role": "Product Engineer",
+          "platform": "We Work Remotely",
+          "status": "Oferta"
+        }
+      ]
+    },
+    "features": {
+      "title": "Todo lo que necesitás para ordenar tu búsqueda",
+      "subtitle": "Pensado para quien aplica a muchas ofertas a la vez y necesita saber, de un vistazo, en qué está cada una.",
+      "items": [
+        {
+          "title": "Un panel, todas tus postulaciones",
+          "description": "Filtrá por estado, plataforma, modalidad y rango de fechas. Buscá por empresa o puesto en tiempo real."
+        },
+        {
+          "title": "Etapas de entrevista al detalle",
+          "description": "Registrá cada instancia — filtro de RR.HH., técnica, entrevista final — con fecha y feedback."
+        },
+        {
+          "title": "Métricas reales de tu búsqueda",
+          "description": "Tasa de respuesta, tiempo promedio hasta la primera respuesta y entrevistas activas."
+        },
+        {
+          "title": "Tus datos son tuyos",
+          "description": "Exportá todo en JSON o CSV cuando quieras, y eliminá tu cuenta con un clic."
+        }
+      ]
+    },
+    "socialProof": {
+      "title": "Construido por alguien que también está buscando trabajo",
+      "subtitle": "Job Tracker nació de la necesidad de ordenar decenas de postulaciones repartidas entre LinkedIn, GetOnBoard y más."
+    },
+    "finalCta": {
+      "title": "Ordená tu búsqueda laboral hoy",
+      "subtitle": "Un clic con Google y ya podés cargar tu primera postulación.",
+      "cta": "Empezar gratis"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados.",
+      "privacy": "Privacidad",
+      "terms": "Términos",
+      "madeBy": "Hecho por"
+    }
+  },
+  "auth": {
+    "login": {
+      "title": "Iniciar sesión",
+      "subtitle": "Accedé a tu panel de postulaciones.",
+      "continueWithGoogle": "Continuar con Google",
+      "googleUnavailable": "El inicio de sesión con Google todavía no está configurado en este entorno.",
+      "devSectionTitle": "Acceso de desarrollo",
+      "devSectionSubtitle": "Solo disponible fuera de producción, para probar la app sin credenciales de Google.",
+      "devEmailLabel": "Email",
+      "devEmailPlaceholder": "vos@ejemplo.com",
+      "devSubmit": "Entrar",
+      "error": "No pudimos iniciar sesión. Probá de nuevo.",
+      "alreadySignedIn": "Ya iniciaste sesión."
+    }
+  },
+  "legal": {
+    "privacy": {
+      "title": "Política de privacidad",
+      "updatedAt": "Última actualización: agosto de 2026",
+      "sections": [
+        {
+          "heading": "Qué datos recopilamos",
+          "body": "Cuando iniciás sesión con Google, recibimos tu nombre, dirección de email y foto de perfil. Además, guardamos los datos que vos cargás explícitamente: empresas, puestos, enlaces, notas y etapas de entrevista de tus postulaciones."
+        },
+        {
+          "heading": "Para qué los usamos",
+          "body": "Usamos estos datos exclusivamente para operar el servicio: mostrarte tu panel, calcular tus métricas y mantener tu sesión activa. No los usamos con fines publicitarios ni los vendemos a terceros."
+        },
+        {
+          "heading": "Con quién los compartimos",
+          "body": "Usamos Google para la autenticación, y proveedores de infraestructura (base de datos y hosting) para operar la aplicación. Estos proveedores procesan los datos en nuestro nombre y no los usan con fines propios."
+        },
+        {
+          "heading": "Cookies",
+          "body": "Usamos únicamente cookies técnicas: una para mantener tu sesión iniciada y otra para recordar tu idioma preferido. No usamos cookies de publicidad ni de rastreo de terceros."
+        },
+        {
+          "heading": "Tus derechos",
+          "body": "Podés exportar todos tus datos en cualquier momento desde Ajustes, en formato JSON o CSV. Podés eliminar tu cuenta y todos tus datos asociados de forma permanente e inmediata, también desde Ajustes."
+        },
+        {
+          "heading": "Retención de datos",
+          "body": "Conservamos tus datos mientras tu cuenta esté activa. Al eliminar tu cuenta, todos tus datos se borran de forma permanente de nuestras bases de producción."
+        },
+        {
+          "heading": "Menores de edad",
+          "body": "Este servicio no está dirigido a menores de 16 años y no recopilamos deliberadamente datos de menores."
+        },
+        {
+          "heading": "Cambios a esta política",
+          "body": "Si hacemos cambios importantes a esta política, lo vamos a indicar en esta misma página junto con la fecha de la última actualización."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Para consultas sobre tus datos o esta política, escribinos a {contactEmail}."
+        }
+      ]
+    },
+    "terms": {
+      "title": "Términos de servicio",
+      "updatedAt": "Última actualización: agosto de 2026",
+      "sections": [
+        {
+          "heading": "Aceptación de los términos",
+          "body": "Al crear una cuenta y usar Job Tracker, aceptás estos términos. Si no estás de acuerdo, no uses el servicio."
+        },
+        {
+          "heading": "Descripción del servicio",
+          "body": "Job Tracker es una herramienta personal para registrar y organizar tus postulaciones laborales. Es un producto en etapa temprana (MVP) y puede cambiar sin previo aviso."
+        },
+        {
+          "heading": "Tu cuenta",
+          "body": "Sos responsable de mantener el acceso a tu cuenta de Google seguro. No compartimos tu cuenta con terceros ni la usamos para fines distintos a los que vos autorizás."
+        },
+        {
+          "heading": "Uso aceptable",
+          "body": "No está permitido usar el servicio para actividades ilegales, intentar acceder a datos de otros usuarios, ni realizar scraping o abuso automatizado de la aplicación."
+        },
+        {
+          "heading": "Tu contenido",
+          "body": "Los datos que cargás (postulaciones, notas, etapas) son tuyos. No reclamamos ningún derecho de propiedad sobre ese contenido; solo lo almacenamos para prestarte el servicio."
+        },
+        {
+          "heading": "Disponibilidad del servicio",
+          "body": "Al ser un MVP, el servicio se ofrece \"tal cual\", sin garantías de disponibilidad continua. Hacemos un esfuerzo razonable por mantenerlo funcionando, pero no ofrecemos un nivel de servicio garantizado."
+        },
+        {
+          "heading": "Limitación de responsabilidad",
+          "body": "En la medida permitida por la ley, no somos responsables por pérdidas indirectas derivadas del uso del servicio, incluida la pérdida de datos por causas fuera de nuestro control razonable."
+        },
+        {
+          "heading": "Cierre de cuenta",
+          "body": "Podés eliminar tu cuenta cuando quieras desde Ajustes. Podemos suspender cuentas que violen estos términos o que representen un riesgo para el servicio."
+        },
+        {
+          "heading": "Cambios a estos términos",
+          "body": "Podemos actualizar estos términos a medida que el producto evoluciona. Los cambios importantes se van a indicar en esta página."
+        },
+        {
+          "heading": "Contacto",
+          "body": "Ante cualquier consulta sobre estos términos, escribinos a {contactEmail}."
+        }
+      ]
+    }
+  },
+  "enums": {
+    "status": {
+      "APPLIED": "Postulado",
+      "SCREENING": "Preselección",
+      "INTERVIEWING": "En entrevistas",
+      "OFFER": "Oferta",
+      "REJECTED": "Rechazado",
+      "WITHDRAWN": "Retirado"
+    },
+    "locationType": {
+      "REMOTE": "Remoto",
+      "HYBRID": "Híbrido",
+      "ONSITE": "Presencial"
+    },
+    "stageType": {
+      "HR_SCREEN": "Filtro de RR.HH.",
+      "TECHNICAL_TEST": "Prueba técnica",
+      "TECH_INTERVIEW": "Entrevista técnica",
+      "CULTURE_FIT": "Fit cultural",
+      "MANAGEMENT": "Entrevista con management",
+      "OFFER_REVIEW": "Revisión de oferta",
+      "OTHER": "Otra"
+    },
+    "salaryPeriod": {
+      "HOURLY": "Por hora",
+      "MONTHLY": "Mensual",
+      "YEARLY": "Anual"
+    },
+    "platforms": {
+      "company-site": "Web de la empresa",
+      "referral": "Referido",
+      "other": "Otra"
+    }
+  }
+}
