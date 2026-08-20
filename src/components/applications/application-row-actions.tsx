@@ -2,7 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { MoreHorizontal, Pencil, Trash2 } from "lucide-react"
+import { Eye, MoreHorizontal, Pencil, Trash2 } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import {
   DropdownMenu,
@@ -11,6 +11,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu"
 import { ApplicationFormDialog } from "./application-form-dialog"
+import { ApplicationDetailDialog } from "./application-detail-dialog"
 import { DeleteApplicationDialog } from "./delete-application-dialog"
 import type { ApplicationListItem, PlatformOption } from "@/types/application"
 
@@ -22,6 +23,7 @@ export function ApplicationRowActions({
   platforms: PlatformOption[]
 }) {
   const t = useTranslations()
+  const [viewOpen, setViewOpen] = useState(false)
   const [editOpen, setEditOpen] = useState(false)
   const [deleteOpen, setDeleteOpen] = useState(false)
 
@@ -39,6 +41,10 @@ export function ApplicationRowActions({
           </Button>
         </DropdownMenuTrigger>
         <DropdownMenuContent align="end">
+          <DropdownMenuItem onSelect={() => setViewOpen(true)}>
+            <Eye className="size-4" aria-hidden="true" />
+            {t("application.actions.view")}
+          </DropdownMenuItem>
           <DropdownMenuItem onSelect={() => setEditOpen(true)}>
             <Pencil className="size-4" aria-hidden="true" />
             {t("application.actions.edit")}
@@ -52,6 +58,12 @@ export function ApplicationRowActions({
           </DropdownMenuItem>
         </DropdownMenuContent>
       </DropdownMenu>
+
+      <ApplicationDetailDialog
+        open={viewOpen}
+        onOpenChange={setViewOpen}
+        application={application}
+      />
 
       <ApplicationFormDialog
         mode="edit"

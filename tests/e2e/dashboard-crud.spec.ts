@@ -55,6 +55,33 @@ test("login, create, filter, edit status, delete", async ({ page }) => {
   ).toBeVisible({ timeout: 10000 })
 })
 
+test("view action shows a read-only detail dialog", async ({ page }) => {
+  const email = `e2e-view-${randomUUID()}@example.com`
+
+  await page.goto("/es/login")
+  await page.fill("#email", email)
+  await page.click("button:has-text('Entrar')")
+  await page.waitForURL("**/dashboard")
+  await page.waitForSelector("h1:has-text('Panel')")
+
+  await page.click("button:has-text('Nueva postulación')")
+  await page.waitForSelector("#companyName")
+  await page.fill("#companyName", "View Co")
+  await page.fill("#jobTitle", "QA Engineer")
+  await page.fill("#appliedAt", "2026-08-01")
+  await page.click("button[type=submit]:has-text('Guardar')")
+  await page.waitForSelector("text=Postulación creada")
+
+  await page.getByRole("button", { name: "Acciones" }).first().click()
+  await page.waitForSelector("[role=menu]")
+  await page.getByRole("menuitem", { name: "Ver" }).click()
+
+  const dialog = page.getByRole("dialog")
+  await expect(dialog.getByText("Detalle de la postulación")).toBeVisible()
+  await expect(dialog.getByText("View Co")).toBeVisible()
+  await expect(page.locator("#companyName")).toHaveCount(0)
+})
+
 test("pick a country in edit and see the highlighted map", async ({
   page,
 }) => {

@@ -83,6 +83,7 @@ declare const messages: {
   "application": {
     "createTitle": "Nueva postulación",
     "editTitle": "Editar postulación",
+    "viewTitle": "Detalle de la postulación",
     "fields": {
       "companyName": "Empresa",
       "companyNamePlaceholder": "Nombre de la empresa",
@@ -95,6 +96,7 @@ declare const messages: {
       "platformCreate": "Crear plataforma…",
       "salaryMin": "Salario mínimo",
       "salaryMax": "Salario máximo",
+      "salary": "Salario",
       "salaryCurrency": "Moneda",
       "salaryPeriod": "Período",
       "locationType": "Modalidad",
@@ -109,6 +111,7 @@ declare const messages: {
       "notes": "Notas"
     },
     "actions": {
+      "view": "Ver",
       "edit": "Editar",
       "delete": "Eliminar",
       "changeStatus": "Cambiar estado"

@@ -136,7 +136,7 @@ export function FilterBar({ platforms }: { platforms: PlatformOption[] }) {
               from: event.target.value ? new Date(event.target.value) : null,
             })
           }
-          className="w-36"
+          className="w-28 sm:w-36"
         />
         <span className="text-muted-foreground text-xs">–</span>
         <Input
@@ -148,7 +148,7 @@ export function FilterBar({ platforms }: { platforms: PlatformOption[] }) {
               to: event.target.value ? new Date(event.target.value) : null,
             })
           }
-          className="w-36"
+          className="w-28 sm:w-36"
         />
       </div>
 

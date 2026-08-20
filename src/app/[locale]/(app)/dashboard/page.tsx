@@ -41,17 +41,19 @@ export default async function DashboardPage({
 
   return (
     <div className="mx-auto max-w-6xl px-6 py-10">
-      <div className="mb-6 flex items-center justify-between gap-4">
-        <h1 className="text-2xl font-semibold">{t("dashboard.title")}</h1>
-        <div className="flex items-center gap-2">
-          <Button asChild variant="outline">
+      <div className="mb-6 flex flex-col gap-3">
+        <div className="flex items-center justify-between gap-4">
+          <h1 className="text-2xl font-semibold">{t("dashboard.title")}</h1>
+          <CreateApplicationButton platforms={platforms} />
+        </div>
+        <div className="flex justify-end">
+          <Button asChild variant="outline" size="sm">
             {/* eslint-disable-next-line @next/next/no-html-link-for-pages -- file download, not a page route */}
             <a href="/api/export?format=csv">
               <Download className="size-4" aria-hidden="true" />
               {t("dashboard.exportCsv")}
             </a>
           </Button>
-          <CreateApplicationButton platforms={platforms} />
         </div>
       </div>
 

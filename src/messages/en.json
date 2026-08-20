@@ -80,6 +80,7 @@
   "application": {
     "createTitle": "New application",
     "editTitle": "Edit application",
+    "viewTitle": "Application details",
     "fields": {
       "companyName": "Company",
       "companyNamePlaceholder": "Company name",
@@ -92,6 +93,7 @@
       "platformCreate": "Create platform…",
       "salaryMin": "Minimum salary",
       "salaryMax": "Maximum salary",
+      "salary": "Salary",
       "salaryCurrency": "Currency",
       "salaryPeriod": "Period",
       "locationType": "Work mode",
@@ -106,6 +108,7 @@
       "notes": "Notes"
     },
     "actions": {
+      "view": "View",
       "edit": "Edit",
       "delete": "Delete",
       "changeStatus": "Change status"

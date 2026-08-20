@@ -152,7 +152,9 @@ export function ApplicationsTable({
         columnHelper.display({
           id: "actions",
           header: () => (
-            <span className="sr-only">{t("dashboard.table.actions")}</span>
+            <span className="block text-right">
+              {t("dashboard.table.actions")}
+            </span>
           ),
           cell: ({ row }) => (
             <div className="flex justify-end">
